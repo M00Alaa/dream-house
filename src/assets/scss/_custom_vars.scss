@@ -1,0 +1,163 @@
+$primary: #183B56;
+$secondary: #517591;
+$success: #30d158;
+$info: #2f80ed;
+$warning: #ed5224;
+$danger: #e7191a;
+$light: #eef0f8;
+$dark: #40444C;
+$cyan: #4cf4ff;
+$gray-50: #fafafa;
+$gray-80: #f3f3f3;
+$gray-100: #f9fafb;
+$gray-200: #f1f2f4;
+$gray-300: #eeeff2;
+$gray-400: #cbd5e0;
+$gray-500: #a0aec0;
+$gray-600: #83899F;
+$gray-700: #464E5F;
+$gray-800: #162542;
+$body-color: #202020;
+$body: #686565;
+$black: #000;
+$white: #fff;
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "cyan": $cyan,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "white": $white,
+  "dark": $dark,
+  "black": $black,
+  "body": $body,
+  "gray": $gray-300,
+  "gray-600": $gray-600,
+  "gray-700": $gray-700,
+  "gray-800": $gray-800,
+);
+@import url('https://fonts.cdnfonts.com/css/neo-sans-arabic');
+
+$font-family-sans-serif: "inter", sans-serif;
+$font-family-monospace: "outfit", sans-serif;
+
+.ff-galada {
+  font-family: "galada", cursive;
+}
+
+$text-muted: $gray-600;
+
+$font-size-base: 1rem;
+
+$h1-font-size: 44px;
+$h2-font-size: 36px;
+$h3-font-size: 28px;
+$h4-font-size: 24px;
+$h5-font-size: 20px;
+$h6-font-size: 16px;
+
+// scss-docs-start font-sizes
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size,
+  14px: 14px,
+);
+// scss-docs-end font-sizes
+
+$headings-font-family: 'Neo Sans Arabic', sans-serif;
+$headings-color: $body-color;
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  10px: 10px,
+  12px: 12px,
+  15px: 15px,
+  16px: 16px,
+  20px: 20px,
+  30px: 30px,
+  40px: 40px,
+  50px: 50px,
+  60px: 60px,
+  80px: 80px,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+);
+
+$enable-caret: false;
+$link-color: $body-color;
+$dropdown-link-hover-color: $primary;
+$dropdown-link-hover-bg: rgba($primary, 0.2);
+$dropdown-border-radius: 4px;
+
+$border-radius: 0.24rem;
+$border-radius-lg: 0.4rem;
+$border-radius-sm: 0.2rem;
+$btn-border-radius-lg: $border-radius;
+$utilities: (
+  "max-width": (
+    responsive: true,
+    property: max-width,
+    class: mw,
+    values: (
+      100: 100%,
+    ),
+  ),
+  "max-height": (
+    responsive: true,
+    property: max-height,
+    class: mh,
+    values: (
+      100: 100%,
+    ),
+  ),
+  "min-height": (
+    responsive: true,
+    property: min-height,
+    class: mh,
+    values: (
+      100vh: 100vh,
+    ),
+  ),
+  "height": (
+    responsive: true,
+    property: height,
+    class: h,
+    values: (
+      100: 100%,
+      75: 75%,
+    ),
+  ),
+  "width": (
+    responsive: true,
+    property: width,
+    class: w,
+    values: (
+      100: 100%,
+      75: 75%,
+      50: 50%,
+      25: 25%,
+      fit-content: fit-content,
+    ),
+  ),
+  "z-index": (
+    responsive: true,
+    property: z-index,
+    class: z-index,
+    values: (
+      1: 1,
+      -1: -1,
+      2: 2,
+    ),
+  ),
+);

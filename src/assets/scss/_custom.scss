@@ -1,0 +1,20 @@
+
+
+// pointer
+.pointer {
+  cursor: pointer;
+}
+
+.object-cover {
+  object-fit: cover;
+  object-position: center;
+}
+
+@import url('https://fonts.cdnfonts.com/css/neo-sans-arabic');
+body {
+  direction: rtl;
+  text-align: right;
+
+  background-color: #40444C;
+  font-family: 'Neo Sans Arabic', sans-serif;
+}
