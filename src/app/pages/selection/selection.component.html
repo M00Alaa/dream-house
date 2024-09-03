@@ -1,0 +1,111 @@
+<section data-aos="zoom-in-down" class="d-flex align-items-center justify-content-center py-5">
+    <div class="col-md-8">
+        <div class="card rounded-3 overflow-hidden position-relative">
+            <div class="row row-cols-1 h-100">
+                <div class="col p-30px">
+                    <div class="text-center">
+
+                        <div class="d-flex align-items-center justify-content-between">
+                            <p routerLink="/pre-step" class="fs-14px text-gray-600 mb-0 pointer">
+                                <!-- <i class='bx bx-right-arrow-alt bx-tada align-middle ms-1 fs-5'></i> -->
+                                <i class='bx bx-right-arrow-alt align-middle ms-1 fs-5'></i>
+                                <span>العودة</span>
+                            </p>
+
+                            <div class="d-flex pointer align-items-center justify-content-center rounded-3 me-auto bg-light"
+                                style="height: 26px; width: 26px;">
+                                <i class="bx bx-x text-gray-600 fs-5"></i>
+                            </div>
+                        </div>
+
+                        <div class="position-relative mx-auto w-fit-content mt-4">
+                            <div class="position-absolute" style="top: -20px; right:30px">
+                                <img src="assets/images/star.svg" class="img-fluid" alt="">
+                            </div>
+                            <h5>أختر المكان المفضل لسكنك</h5>
+                            <p class="fs-14px text-gray-300 mb-0">قم بأختيار مصدر شقك الأسكانية كي تستكمل باقي الخطوات
+                            </p>
+                            <div class="position-absolute" style="bottom: -11px; left: -18px;">
+                                <img src="assets/images/star.svg" class="img-fluid" alt="">
+                            </div>
+                        </div>
+
+                        <div
+                            class="col-12 col-md-10 col-lg-8 mx-auto gap-3 d-flex flex-column flex-md-row align-items-center justify-content-between mt-5">
+                            <div class="col-12 col-md-4">
+                                <div class="card-container mt-2">
+                                    <label class="card pointer rounded-3 border position-relative"
+                                        [ngClass]="{ 'border-info': selectedValue === 1 }" (click)="selectCard(1)">
+                                        <input type="radio" name="option" class="position-absolute top-10px end-10px"
+                                            [(ngModel)]="selectedValue" [value]="1" />
+                                        <div class="card-body text-center fw-normal">
+                                            <div class="d-flex mx-auto align-items-center justify-content-center rounded-3"
+                                                style="width: 60px; height: 60px; background-color: rgba(62, 151, 255, 0.08)">
+                                                <img src="assets/images/selection/house.svg" class="img-fluid" alt="">
+                                            </div>
+                                            <p class="text-secondary mt-2">القاهرة</p>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <div class="card-container mt-2">
+                                    <label class="card pointer rounded-3 border position-relative"
+                                        [ngClass]="{ 'border-info': selectedValue === 2 }" (click)="selectCard(2)">
+                                        <input type="radio" name="option" class="position-absolute top-10px end-10px"
+                                            [(ngModel)]="selectedValue" [value]="2" />
+                                        <div class="card-body text-center fw-normal">
+                                            <div class="d-flex mx-auto align-items-center justify-content-center rounded-3"
+                                                style="width: 60px; height: 60px; background-color: rgba(255, 189, 102, 0.08)">
+                                                <img src="assets/images/selection/truck-fast.svg" class="img-fluid"
+                                                    alt="">
+                                            </div>
+                                            <p class="text-secondary mt-2">الساحل الشمالي</p>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <div class="card-container mt-2">
+                                    <label class="card pointer rounded-3 border position-relative"
+                                        [ngClass]="{ 'border-info': selectedValue === 3 }" (click)="selectCard(3)">
+                                        <input type="radio" name="option" class="position-absolute top-10px end-10px"
+                                            [(ngModel)]="selectedValue" [value]="3" />
+                                        <div class="card-body text-center fw-normal">
+                                            <div class="d-flex mx-auto align-items-center justify-content-center rounded-3"
+                                                style="width: 60px; height: 60px; background-color: rgba(103, 70, 246, 0.08)">
+                                                <img src="assets/images/selection/user.svg" class="img-fluid" alt="">
+                                            </div>
+                                            <p class="text-secondary mt-2">دهب</p>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="w-100 text-center mt-80px">
+                            <button [disabled]="!selectedValue" class="btn btn-info px-60px py-1"
+                                (click)="createProject()">
+                                <i class="mdi mdi-chevron-right-circle-outline align-middle ms-1"></i>
+                                أبدأ الأن
+                            </button>
+
+                            <p class="fs-12px text-gray-500 mt-4 mb-1">نحن هنا لمساعدتك في أختيار منزلك بسهولة وعناية
+                            </p>
+                            <p class="fs-12px text-gray-500 mb-0">قم بالضغط على زر "بدء" للبدء في العملية، واتبع
+                                التوجيهات
+                                لإدخال معلومات الحملة</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="position-absolute" style="  bottom: -9px; left: 0; right: 0;">
+                <nz-progress [nzPercent]="50" [nzShowInfo]="false"></nz-progress>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,122 @@
+<section data-aos="zoom-in-down" class="d-flex align-items-center justify-content-center py-5">
+    <div class="col-md-8">
+        <div class="card rounded-3 overflow-hidden h-666">
+            <div class="row row-cols-1 row-cols-lg-2 h-100">
+                <div class="col p-60px bg-image">
+                    <div>
+                        <p class="fs-14px mb-5 text-gray-600">
+                            <img src="assets/images/fxemoji_megaphone.svg" class="img-fluid ms-2 align-middle" alt="">
+                            <span>تهيئة الحملات الإعلانية</span>
+                        </p>
+
+                        <h4>
+                            مرحبًا بك في منصة أختيار عقارات سكنية للتعمير
+                        </h4>
+
+                        <p class="text-gray-600 mt-3" style="max-width: 303px;">قم بإضافة عملائك الحاليين إلي نظامك
+                            الجديد لتبدأ التجربة""قم بإضافة عملائك الحاليين إلي نظامك الجديد
+                            لتبدأ التجربة"</p>
+
+                        <div class="mt-5 text-gray-700">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <div style="width: 26px; height: 26px"
+                                    class="bg-info-subtle d-flex align-items-center justify-content-center rounded-circle">
+                                    <i class="bx bx-check text-info fs-5"></i>
+                                </div>
+                                <p class="fs-14px mb-0">قم بتحميل شعارك وتفاصيل علامتك التجارية</p>
+                            </div>
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <div style="width: 26px; height: 26px"
+                                    class="bg-info-subtle d-flex align-items-center justify-content-center rounded-circle">
+                                    <i class="bx bx-check text-info fs-5"></i>
+                                </div>
+                                <p class="fs-14px mb-0">اختر وخصص الحقول التي تحتاجها</p>
+                            </div>
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <div style="width: 26px; height: 26px"
+                                    class="bg-info-subtle d-flex align-items-center justify-content-center rounded-circle">
+                                    <i class="bx bx-check text-info fs-5"></i>
+                                </div>
+                                <p class="fs-14px mb-0">اختر موضوعاً وصمم مظهر استمارتك</p>
+                            </div>
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <div style="width: 26px; height: 26px"
+                                    class="bg-info-subtle d-flex align-items-center justify-content-center rounded-circle">
+                                    <i class="bx bx-check text-info fs-5"></i>
+                                </div>
+                                <p class="fs-14px mb-0">ضبط رسالة شكر وإجراءات المتابعة</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col p-30px">
+                    <div>
+                        <div class="d-flex pointer align-items-center justify-content-center rounded-3 me-auto bg-light"
+                            style="height: 26px; width: 26px;">
+                            <i class="bx bx-x text-gray-600 fs-5"></i>
+                        </div>
+
+                        <h5>طريقة بناء الحملة الخاصة بك</h5>
+
+                        <p class="text-gray-600 mt-2">الطريقة المختارة لطريقة إنشاء رسالة الحملة</p>
+
+
+                        <div class="card-container mt-2">
+                            <label class="card shadow-sm pointer rounded-3 border position-relative"
+                                [ngClass]="{ 'border-info': selectedValue === 1 }" (click)="selectCard(1)">
+                                <input type="radio" name="option" class="position-absolute top-10px start-10px"
+                                    [(ngModel)]="selectedValue" [value]="1" />
+                                <div class="card-body fw-normal">
+                                    <div class="d-flex align-items-center justify-content-center rounded-3"
+                                        style="width: 35px; height: 35px; background-color: rgba(62, 151, 255, 0.08)">
+                                        <img src="assets/images/file-edit.svg" class="img-fluid" alt="">
+                                    </div>
+                                    <p class="text-secondary mb-1 mt-2">إنشاء يدوي</p>
+                                    <p class="fs-14px text-gray-600 mb-0 ">
+                                        قم بإنشاء رسالة طلب سكنك بشكل يدوي ودقيق. اختر كلماتك بعناية،
+                                    </p>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="card-container mt-2">
+                            <label class="card shadow-sm pointer rounded-3 border position-relative"
+                                [ngClass]="{ 'border-info': selectedValue === 2 }" (click)="selectCard(2)">
+                                <input type="radio" name="option" class="position-absolute top-10px start-10px"
+                                    [(ngModel)]="selectedValue" [value]="2" />
+                                <div class="card-body fw-normal">
+                                    <div class="d-flex align-items-center justify-content-center rounded-3"
+                                        style="width: 35px; height: 35px; background: rgba(103, 70, 246, 0.08)">
+                                        <img src="assets/images/ai-icon.svg" class="img-fluid" alt="">
+                                    </div>
+                                    <p class="text-secondary mb-1 mt-2">إنشاء عبر الذكاء الأصطناعي</p>
+                                    <p class="fs-14px text-gray-600 mb-0">
+                                        قم بإنشاء رسالة طلب سكنك بشكل يدوي ودقيق. اختر كلماتك بعناية،
+                                    </p>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div *ngIf="selectedValue === 1">
+                            <nz-divider></nz-divider>
+
+                            <h5 class="mb-0">قم بتسمية مشروع أختيار</h5>
+                            <p class="text-gray-600 my-3">أسم مشروعك يجب ان يكون مميز وواضح</p>
+                            <input class="rounded-3" nz-input placeholder="أسم مشروع مقترح" [(ngModel)]="projectName"
+                                type="text" />
+
+                            <div class="text-start mt-3 w-100">
+                                <button [disabled]="!projectName" class="btn btn-info px-60px py-1"
+                                    (click)="createProject()">
+                                    أبدأ الأن
+                                    <i class="bx bx-arrow-back align-middle me-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

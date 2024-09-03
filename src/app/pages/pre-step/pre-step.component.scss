@@ -1,0 +1,15 @@
+.h-666 {
+  height: 688px;
+}
+
+@media screen and (max-width: 991px) {
+  .h-666 {
+    height: auto;
+  }
+}
+
+.bg-image {
+  background: url(../../../assets/images/Rectangle.png) no-repeat center center /
+    cover;
+  height: 100%;
+}

@@ -11,9 +11,9 @@ $gray-50: #fafafa;
 $gray-80: #f3f3f3;
 $gray-100: #f9fafb;
 $gray-200: #f1f2f4;
-$gray-300: #eeeff2;
+$gray-300: #a5a7ab;
 $gray-400: #cbd5e0;
-$gray-500: #a0aec0;
+$gray-500: #9ca3af;
 $gray-600: #83899f;
 $gray-700: #464e5f;
 $gray-800: #162542;
@@ -48,6 +48,12 @@ $font-family-monospace: "outfit", sans-serif;
   font-family: "galada", cursive;
 }
 
+.text-gray-300 {
+  color: $gray-300 !important;
+}
+.text-gray-500 {
+  color: $gray-500 !important;
+}
 .text-gray-600 {
   color: $gray-600 !important;
 }
@@ -75,6 +81,7 @@ $font-sizes: (
   5: $h5-font-size,
   6: $h6-font-size,
   14px: 14px,
+  12px: 12px,
 );
 // scss-docs-end font-sizes
 
@@ -172,6 +179,14 @@ $utilities: (
     responsive: true,
     property: left,
     class: start,
+    values: (
+      10px: 10px,
+    ),
+  ),
+  "end": (
+    responsive: true,
+    property: right,
+    class: end,
     values: (
       10px: 10px,
     ),

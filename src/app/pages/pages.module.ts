@@ -9,16 +9,29 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzProgressModule } from 'ng-zorro-antd/progress';
+
+import { PreStepComponent } from './pre-step/pre-step.component';
+import { SelectionComponent } from './selection/selection.component';
+import { ProbComponent } from './prob/prob.component';
+import { SubmissionComponent } from './submission/submission.component';
 
 const routes: Routes = [
 
   { path: '', component: HomeComponent },
-
+  { path: 'pre-step', component: PreStepComponent },
+  { path: 'prob', component: ProbComponent },
+  { path: 'selection', component: SelectionComponent },
+  { path: 'submission', component: SubmissionComponent },
 ];
 
 @NgModule({
   declarations: [
     HomeComponent,
+    PreStepComponent,
+    SelectionComponent,
+    ProbComponent,
+    SubmissionComponent,
   ],
   imports: [
     CommonModule,
@@ -28,7 +41,8 @@ const routes: Routes = [
     TranslateModule,
     NzDividerModule,
     NzInputModule,
-    NzButtonModule
+    NzButtonModule,
+    NzProgressModule
   ]
 })
 export class PagesModule { }
