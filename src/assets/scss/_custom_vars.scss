@@ -1,11 +1,11 @@
-$primary: #183B56;
-$secondary: #517591;
+$primary: #183b56;
+$secondary: #2e2e2e;
 $success: #30d158;
-$info: #2f80ed;
+$info: #3e97ff;
 $warning: #ed5224;
 $danger: #e7191a;
-$light: #eef0f8;
-$dark: #40444C;
+$light: #f4f4f4;
+$dark: #40444c;
 $cyan: #4cf4ff;
 $gray-50: #fafafa;
 $gray-80: #f3f3f3;
@@ -14,8 +14,8 @@ $gray-200: #f1f2f4;
 $gray-300: #eeeff2;
 $gray-400: #cbd5e0;
 $gray-500: #a0aec0;
-$gray-600: #83899F;
-$gray-700: #464E5F;
+$gray-600: #83899f;
+$gray-700: #464e5f;
 $gray-800: #162542;
 $body-color: #202020;
 $body: #686565;
@@ -39,13 +39,20 @@ $theme-colors: (
   "gray-700": $gray-700,
   "gray-800": $gray-800,
 );
-@import url('https://fonts.cdnfonts.com/css/neo-sans-arabic');
+@import url("https://fonts.cdnfonts.com/css/neo-sans-arabic");
 
 $font-family-sans-serif: "inter", sans-serif;
 $font-family-monospace: "outfit", sans-serif;
 
 .ff-galada {
   font-family: "galada", cursive;
+}
+
+.text-gray-600 {
+  color: $gray-600 !important;
+}
+.text-gray-700 {
+  color: $gray-700 !important;
 }
 
 $text-muted: $gray-600;
@@ -71,7 +78,7 @@ $font-sizes: (
 );
 // scss-docs-end font-sizes
 
-$headings-font-family: 'Neo Sans Arabic', sans-serif;
+$headings-font-family: "Neo Sans Arabic", sans-serif;
 $headings-color: $body-color;
 
 $spacer: 1rem;
@@ -86,6 +93,7 @@ $spacers: (
   40px: 40px,
   50px: 50px,
   60px: 60px,
+  70px: 70px,
   80px: 80px,
   1: $spacer * 0.25,
   2: $spacer * 0.5,
@@ -158,6 +166,22 @@ $utilities: (
       1: 1,
       -1: -1,
       2: 2,
+    ),
+  ),
+  "start": (
+    responsive: true,
+    property: left,
+    class: start,
+    values: (
+      10px: 10px,
+    ),
+  ),
+  "top": (
+    responsive: true,
+    property: top,
+    class: top,
+    values: (
+      10px: 10px,
     ),
   ),
 );

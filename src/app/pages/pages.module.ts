@@ -6,6 +6,10 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+
 const routes: Routes = [
 
   { path: '', component: HomeComponent },
@@ -21,7 +25,10 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     NgbCarouselModule,
     FormsModule,
-    TranslateModule
+    TranslateModule,
+    NzDividerModule,
+    NzInputModule,
+    NzButtonModule
   ]
 })
 export class PagesModule { }
