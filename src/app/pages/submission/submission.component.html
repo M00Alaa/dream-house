@@ -1,1 +1,81 @@
-<p>submission works!</p>
+<section data-aos="zoom-in-down" class="d-flex align-items-center justify-content-center py-5">
+    <div class="col-md-8">
+        <div class="card rounded-3 overflow-hidden position-relative">
+            <div class="row row-cols-1 h-100">
+                <div class="col p-30px">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <p routerLink="/pre-step" class="fs-14px text-gray-600 mb-0 pointer">
+                            <!-- <i class='bx bx-right-arrow-alt bx-tada align-middle ms-1 fs-5'></i> -->
+                            <i class='bx bx-right-arrow-alt align-middle ms-1 fs-5'></i>
+                            <span>العودة</span>
+                        </p>
+
+                        <div class="d-flex pointer align-items-center justify-content-center rounded-3 me-auto bg-light"
+                            style="height: 26px; width: 26px;">
+                            <i class="bx bx-x text-gray-600 fs-5"></i>
+                        </div>
+                    </div>
+                    <div class="px-40px mt-40px">
+
+                        <div class="position-relative w-fit-content mb-30px">
+                            <div class="position-absolute" style="top: -25px; right:-20px">
+                                <img src="assets/images/warning-star.svg" class="img-fluid" alt="">
+                            </div>
+                            <h5>قم بكتابة وصف منزل أحلامك</h5>
+                            <!-- <p class="fs-14px text-gray-300 mb-0">قم بأختيار مصدر شقك الأسكانية كي تستكمل باقي الخطوات
+                            </p> -->
+                            <div class="position-absolute" style="bottom: -20px; left: -40px;">
+                                <img src="assets/images/warning-star.svg" class="img-fluid" alt="">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <p class="fs-14px text-gray-600 mb-1">وصف مختصر عن المنزل</p>
+                            <input class="rounded-3" nz-input placeholder="اكتب وصف مختصر"
+                                [(ngModel)]="houseDescription" type="text" />
+                        </div>
+
+                        <div class="mt-3 position-relative">
+                            <div class="position-absolute" style="top: -115px;left: 15px;">
+                                <img src="assets/images/message-icon.svg" class="img-fluid" alt="">
+                            </div>
+                            <p class="fs-14px text-gray-600 mb-1">وصف تعبيري عن المنزل</p>
+                            <!-- <ckeditor [editor]="Editor" [(ngModel)]="editorData"></ckeditor> -->
+
+                            <div>
+                                <div class="main-container">
+                                    <div class="editor-container editor-container_classic-editor"
+                                        #editorContainerElement>
+                                        <div class="editor-container__editor">
+                                            <div #editorElement>
+                                                <ckeditor [(ngModel)]="editorData" [editor]="Editor"
+                                                    [config]="editorConfig" *ngIf="isLayoutReady" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="w-100 text-center mt-80px">
+                            <button [disabled]="!editorData || !houseDescription" class="btn btn-info px-60px py-1"
+                                (click)="getData()">
+                                الخطوة التالية
+                            </button>
+
+                            <p class="fs-12px text-gray-500 mt-4 mb-0">
+                                قم بالضغط على زر "بدء" للبدء في العملية، لادخال معلومات المنزل
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="position-absolute" style="  bottom: -9px; left: 0; right: 0;">
+                <nz-progress [nzPercent]="50" [nzShowInfo]="false"></nz-progress>
+            </div>
+        </div>
+    </div>
+</section>

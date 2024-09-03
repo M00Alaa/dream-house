@@ -35,3 +35,25 @@ body {
     -o-transform: scale();
   }
 }
+
+.ck-reset_all :not(.ck-reset_all-excluded *),
+.ck.ck-reset,
+.ck.ck-reset_all {
+  background: #f2f4f7 !important;
+  border: 0;
+  box-sizing: border-box;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  position: static;
+  text-decoration: none;
+  transition: none;
+  vertical-align: middle;
+  width: auto;
+  word-wrap: break-word;
+}
+
+.ck[dir="rtl"] .ck {
+  overflow: scroll;
+  max-height: 333px;
+}

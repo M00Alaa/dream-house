@@ -15,6 +15,7 @@ import { PreStepComponent } from './pre-step/pre-step.component';
 import { SelectionComponent } from './selection/selection.component';
 import { ProbComponent } from './prob/prob.component';
 import { SubmissionComponent } from './submission/submission.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 const routes: Routes = [
 
@@ -42,7 +43,8 @@ const routes: Routes = [
     NzDividerModule,
     NzInputModule,
     NzButtonModule,
-    NzProgressModule
+    NzProgressModule,
+    CKEditorModule
   ]
 })
 export class PagesModule { }
