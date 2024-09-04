@@ -1,5 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { Component } from '@angular/core';
 
 
 // import translations from 'ckeditor5/translations/ar.js';
@@ -11,26 +10,25 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
   styleUrls: ['./submission.component.scss']
 })
 export class SubmissionComponent {
-  houseDescription = '';
-  public editorData: string = `<p>عزيزي [اسم العميل]،</p><p>نحن في [اسم الشركة] نسعى دائمًا لتقديم أفضل الحلول التي تلبي احتياجاتك وتجعل حياتك أسهل. لذلك، يسعدنا أن نعلن عن إطلاق ميزات جديدة ومثيرة في منصتنا!</p><p>ما الجديد؟</p><ul><li>ميزة X: التي تتيح لك [وصف مختصر للميزة وفائدتها].</li><li>ميزة Y: لتمكينك من [وصف مختصر للميزة وفائدتها].</li><li>ميزة Z: التي تساعدك على [وصف مختصر للميزة وفائدتها].</li></ul><p>لماذا تختار [اسم الشركة]؟</p><ul><li>خدمة عملاء متميزة: نحن هنا لدعمك على مدار الساعة.</li><li>أسعار تنافسية: احصل على أفضل قيمة مقابل ما تدفعه.</li><li>أمان وثقة: نحن نحافظ على سرية معلوماتك وأمانها.</li></ul><p>عرض خاص! احصل على خصم بنسبة [نسبة الخصم]% عند استخدام الكود NEWFEATURES أثناء عملية الشراء. العرض ساري حتى [تاريخ انتهاء العرض].</p><p>لا تفوت الفرصة! انقر هنا للاكتشاف الآن: [رابط الموقع]</p><p>إذا كان لديك أي استفسارات أو تحتاج إلى مساعدة، لا تتردد في الاتصال بنا على [بيانات الاتصال].</p><p>شكرًا لاختيارك [اسم الشركة]. نحن نتطلع إلى خدمتك وتقديم أفضل تجربة ممكنة لك.</p><p>مع أطيب التحيات، فريق [اسم الشركة]</p>`;
+  current = 0;
 
+  percent = 0;
 
-  public editorConfig = {
-    language: 'ar',
-    toolbar: { items: ['bold', 'italic', 'link', '|', 'bulletedList', 'numberedList', 'blockQuote', '|', 'undo', 'redo'], shouldNotGroupWhenFull: true }
-  };
+  constructor() {
+    for (let index = 0; index <= 100; index++) {
+      setTimeout(() => {
+        this.percent = index;
+        index == 100 ? (this.current = 1) : (this.current = 0);
+      }, index * 50);
 
-  constructor(private changeDetector: ChangeDetectorRef) { }
-
-  public isLayoutReady = false;
-  public Editor = ClassicEditor;
-  public ngAfterViewInit(): void {
-    this.isLayoutReady = true;
-    this.changeDetector.detectChanges();
+    }
   }
 
-  getData() {
-    console.log(this.editorData);
+  next() {
+    this.current++;
   }
 
+  pre() {
+    this.current--;
+  }
 }

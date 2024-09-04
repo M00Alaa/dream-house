@@ -1,15 +1,14 @@
-<div class="d-flex justify-content-center align-items-center vh-100">
-    <div class="text-center">
-        <img src="assets/images/logo-white.png" class="img-fluid mb-4" style="max-width: 222px;" alt="">
-        <h1 class="text-white text-uppercase">Your Dream House</h1>
-
-        <p class="text-white">منصة تجارة العقارات السكنية</p>
-
-        <a [routerLink]="['/pre-step']" class="btn btn-primary px-60px">
-            بدأ الإستخدام
-
-            <!-- <i class="mdi mdi-arrow-left align-middle ms-2"></i> -->
-        </a>
-    </div>
-
+<div class="steps-content">
+    <ng-container *ngIf="current === 0">
+        <app-pre-step></app-pre-step>
+    </ng-container>
+    <ng-container *ngIf="current === 1">
+        <app-selection></app-selection>
+    </ng-container>
+    <ng-container *ngIf="current === 2">
+        <app-prob></app-prob>
+    </ng-container>
+    <ng-container *ngIf="current === 3">
+        <app-submission></app-submission>
+    </ng-container>
 </div>

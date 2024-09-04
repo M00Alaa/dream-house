@@ -12,7 +12,7 @@ $gray-80: #f3f3f3;
 $gray-100: #f9fafb;
 $gray-200: #f1f2f4;
 $gray-300: #a5a7ab;
-$gray-400: #cbd5e0;
+$gray-400: #fcfcfc;
 $gray-500: #9ca3af;
 $gray-600: #83899f;
 $gray-700: #464e5f;
@@ -50,6 +50,9 @@ $font-family-monospace: "outfit", sans-serif;
 
 .text-gray-300 {
   color: $gray-300 !important;
+}
+.bg-gray-400 {
+  background-color: $gray-400 !important;
 }
 .text-gray-500 {
   color: $gray-500 !important;

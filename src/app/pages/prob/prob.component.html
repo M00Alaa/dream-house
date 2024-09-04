@@ -1,111 +1,177 @@
-<section data-aos="zoom-in-down" class="d-flex align-items-center justify-content-center py-5">
-    <div class="col-md-8">
-        <div class="card rounded-3 overflow-hidden position-relative">
-            <div class="row row-cols-1 h-100">
-                <div class="col p-30px">
-                    <div class="text-center">
+<div class="steps-content">
+    <ng-container *ngIf="current === 0">
+        <section data-aos="zoom-in-down" class="d-flex align-items-center justify-content-center py-5">
+            <div class="col-md-8">
+                <div class="card rounded-3 overflow-hidden position-relative">
+                    <div class="row row-cols-1 h-100">
+                        <div class="col p-30px">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p routerLink="/pre-step" class="fs-14px text-gray-600 mb-0 pointer">
+                                    <!-- <i class='bx bx-right-arrow-alt bx-tada align-middle ms-1 fs-5'></i> -->
+                                    <i class='bx bx-right-arrow-alt align-middle ms-1 fs-5'></i>
+                                    <span>العودة</span>
+                                </p>
 
-                        <div class="d-flex align-items-center justify-content-between">
-                            <p routerLink="/selection" class="fs-14px text-gray-600 mb-0 pointer">
-                                <!-- <i class='bx bx-right-arrow-alt bx-tada align-middle ms-1 fs-5'></i> -->
-                                <i class='bx bx-right-arrow-alt align-middle ms-1 fs-5'></i>
-                                <span>العودة</span>
-                            </p>
-
-                            <div class="d-flex pointer align-items-center justify-content-center rounded-3 me-auto bg-light"
-                                style="height: 26px; width: 26px;">
-                                <i class="bx bx-x text-gray-600 fs-5"></i>
+                                <div class="d-flex pointer align-items-center justify-content-center rounded-3 me-auto bg-light"
+                                    style="height: 26px; width: 26px;">
+                                    <i class="bx bx-x text-gray-600 fs-5"></i>
+                                </div>
                             </div>
-                        </div>
+                            <div class="px-40px mt-40px">
 
-                        <div class="position-relative mx-auto w-fit-content mt-4">
-                            <div class="position-absolute" style="top: -20px; right:30px">
-                                <img src="assets/images/star.svg" class="img-fluid" alt="">
-                            </div>
-                            <h5>أختر نوع المنزل</h5>
-                            <p class="fs-14px text-gray-300 mb-0">
-                                قم بأختيار مصدر شقك الأسكانية كل تستكمل باقي الخطوات
-                            </p>
-                            <div class="position-absolute" style="bottom: -11px; left: -18px;">
-                                <img src="assets/images/star.svg" class="img-fluid" alt="">
-                            </div>
-                        </div>
+                                <div class="position-relative w-fit-content mb-30px">
+                                    <div class="position-absolute" style="top: -25px; right:-20px">
+                                        <img src="assets/images/warning-star.svg" class="img-fluid" alt="">
+                                    </div>
+                                    <h5>قم بكتابة وصف منزل أحلامك</h5>
+                                    <!-- <p class="fs-14px text-gray-300 mb-0">قم بأختيار مصدر شقك الأسكانية كي تستكمل باقي الخطوات
+                                    </p> -->
+                                    <div class="position-absolute" style="bottom: -20px; left: -40px;">
+                                        <img src="assets/images/warning-star.svg" class="img-fluid" alt="">
+                                    </div>
+                                </div>
 
-                        <div
-                            class="col-12 col-md-10 col-lg-8 mx-auto gap-3 d-flex flex-column flex-md-row align-items-center justify-content-between mt-5">
-                            <div class="col-12 col-md-4">
-                                <div class="card-container mt-2">
-                                    <label class="card pointer rounded-3 border position-relative"
-                                        [ngClass]="{ 'border-info': selectedValue === 1 }" (click)="selectCard(1)">
-                                        <input type="radio" name="option" class="position-absolute top-10px end-10px"
-                                            [(ngModel)]="selectedValue" [value]="1" />
-                                        <div class="card-body text-center fw-normal">
-                                            <div class="d-flex mx-auto align-items-center justify-content-center rounded-3"
-                                                style="width: 60px; height: 60px; background-color: rgba(248, 182, 2, 0.08)">
-                                                <img src="assets/images/prob/1.svg" class="img-fluid" alt="">
+                                <div class="col-md-6">
+                                    <p class="fs-14px text-gray-600 mb-1">وصف مختصر عن المنزل</p>
+                                    <input class="rounded-3" nz-input placeholder="اكتب وصف مختصر"
+                                        [(ngModel)]="houseDescription" type="text" />
+                                </div>
+
+                                <div class="mt-3 position-relative">
+                                    <div class="position-absolute" style="top: -115px;left: 15px;">
+                                        <img src="assets/images/message-icon.svg" class="img-fluid" alt="">
+                                    </div>
+                                    <p class="fs-14px text-gray-600 mb-1">وصف تعبيري عن المنزل</p>
+                                    <!-- <ckeditor [editor]="Editor" [(ngModel)]="editorData"></ckeditor> -->
+
+                                    <div>
+                                        <div class="main-container">
+                                            <div class="editor-container editor-container_classic-editor"
+                                                #editorContainerElement>
+                                                <div class="editor-container__editor">
+                                                    <div #editorElement>
+                                                        <ckeditor [(ngModel)]="editorData" [editor]="Editor"
+                                                            [config]="editorConfig" *ngIf="isLayoutReady" />
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <p class="text-secondary mt-2">فيلا</p>
                                         </div>
-                                    </label>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="w-100 text-center mt-80px">
+                                    <button [disabled]="!editorData || !houseDescription"
+                                        class="btn btn-info px-60px py-1" (click)="next()">
+                                        الخطوة التالية
+                                    </button>
+
+                                    <p class="fs-12px text-gray-500 mt-4 mb-0">
+                                        قم بالضغط على زر "بدء" للبدء في العملية، لادخال معلومات المنزل
+                                    </p>
                                 </div>
                             </div>
 
-                            <div class="col-12 col-md-4">
-                                <div class="card-container mt-2">
-                                    <label class="card pointer rounded-3 border position-relative"
-                                        [ngClass]="{ 'border-info': selectedValue === 2 }" (click)="selectCard(2)">
-                                        <input type="radio" name="option" class="position-absolute top-10px end-10px"
-                                            [(ngModel)]="selectedValue" [value]="2" />
-                                        <div class="card-body text-center fw-normal">
-                                            <div class="d-flex mx-auto align-items-center justify-content-center rounded-3"
-                                                style="width: 60px; height: 60px; background-color: rgba(62, 151, 255, 0.08)">
-                                                <img src="assets/images/prob/2.svg" class="img-fluid" alt="">
-                                            </div>
-                                            <p class="text-secondary mt-2">شقة دوبليكس</p>
-                                        </div>
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-md-4">
-                                <div class="card-container mt-2">
-                                    <label class="card pointer rounded-3 border position-relative"
-                                        [ngClass]="{ 'border-info': selectedValue === 3 }" (click)="selectCard(3)">
-                                        <input type="radio" name="option" class="position-absolute top-10px end-10px"
-                                            [(ngModel)]="selectedValue" [value]="3" />
-                                        <div class="card-body text-center fw-normal">
-                                            <div class="d-flex mx-auto align-items-center justify-content-center rounded-3"
-                                                style="width: 60px; height: 60px; background-color: rgba(72, 178, 154, 0.08)">
-                                                <img src="assets/images/prob/3.svg" class="img-fluid" alt="">
-                                            </div>
-                                            <p class="text-secondary mt-2">شقة سكنية</p>
-                                        </div>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="w-100 text-center mt-80px">
-                            <button [disabled]="!selectedValue" class="btn btn-info px-70px py-1"
-                                (click)="createProject()">
-                                <!-- <i class="mdi mdi-chevron-right-circle-outline align-middle ms-1"></i> -->
-                                التالي
-                            </button>
-
-                            <p class="fs-12px text-gray-500 mt-4 mb-1">نحن هنا لمساعدتك في أختيار منزلك بسهولة وعناية
-                            </p>
-                            <p class="fs-12px text-gray-500 mb-0">قم بالضغط على زر "بدء" للبدء في العملية، واتبع
-                                التوجيهات
-                                لإدخال معلومات الحملة</p>
                         </div>
                     </div>
-
+                    <div class="position-absolute" style="  bottom: -9px; left: 0; right: 0;">
+                        <nz-progress [nzPercent]="50" [nzShowInfo]="false"></nz-progress>
+                    </div>
                 </div>
             </div>
-            <div class="position-absolute" style="  bottom: -9px; left: 0; right: 0;">
-                <nz-progress [nzPercent]="50" [nzShowInfo]="false"></nz-progress>
+        </section>
+    </ng-container>
+    <ng-container *ngIf="current === 1">
+        <section data-aos="zoom-in-down" class="d-flex align-items-center justify-content-center py-5">
+            <div class="col-md-8">
+                <div class="card rounded-3 overflow-hidden position-relative">
+                    <div class="row row-cols-1 h-100">
+                        <div class="col p-30px">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p (click)="pre()" class="fs-14px text-gray-600 mb-0 pointer">
+                                    <!-- <i class='bx bx-right-arrow-alt bx-tada align-middle ms-1 fs-5'></i> -->
+                                    <i class='bx bx-right-arrow-alt align-middle ms-1 fs-5'></i>
+                                    <span>العودة</span>
+                                </p>
+
+                                <div class="d-flex pointer align-items-center justify-content-center rounded-3 me-auto bg-light"
+                                    style="height: 26px; width: 26px;">
+                                    <i class="bx bx-x text-gray-600 fs-5"></i>
+                                </div>
+                            </div>
+                            <div class="px-40px mt-40px">
+
+
+                                <div class="mb-30px">
+                                    <!-- <div class="position-absolute" style="top: -25px; right:-20px">
+                                        <img src="assets/images/warning-star.svg" class="img-fluid" alt="">
+                                    </div> -->
+                                    <h5>قم بكتابة نص الرسالة المرسلة</h5>
+                                    <p class="fs-14px text-gray-300 mb-0">
+                                        قم بتسمية حملتك و تاريخ إرسال الحملة المتوقع
+                                    </p>
+                                    <!-- <div class="position-absolute" style="bottom: -20px; left: -40px;">
+                                        <img src="assets/images/warning-star.svg" class="img-fluid" alt="">
+                                    </div> -->
+                                </div>
+
+
+                                <div class="mt-3 bg-gray-400 rounded-3 p-3 border position-relative"
+                                    style="z-index: 1;">
+                                    <div class="position-relative">
+                                        <div class="position-absolute" style="top: -120px; left: 15px; z-index: 0;">
+                                            <img src="assets/images/message-icon.svg"
+                                                style="width: 144px; height: 144px;" alt="">
+                                        </div>
+                                        <p class="fs-14px text-gray-600 mb-2">
+                                            <i class="bx bx-calendar ms-2 align-middle"></i>
+                                            تصميم المنزل
+                                        </p>
+
+                                        <nz-radio-group [(ngModel)]="radioValue">
+                                            <label nz-radio nzValue="A">تصميم حديث</label>
+                                            <label nz-radio nzValue="B">تصميم حديث وذكي</label>
+                                        </nz-radio-group>
+                                    </div>
+                                </div>
+
+                                <div class="card rounded-3 overflow-hidden border mt-3">
+                                    <div class="card-header border-bottom bg-gray-400">
+                                        <p class="fs-14px text-gray-600 mb-0">
+                                            <i class="bx bx-pencil me-s align-middle"></i>
+                                            معاينة وصف المنزل
+                                        </p>
+
+                                        <p class="fs-14px text-gray-500 mb-0">الموضوع: <span class="text-primary">فيلا
+                                                قريبة من التجمع الخامس</span></p>
+                                    </div>
+
+                                    <div class="card-body" [innerHTML]="editorData">
+
+                                    </div>
+                                </div>
+
+
+                                <div class="w-100 text-center mt-80px">
+                                    <button [disabled]="!radioValue" class="btn btn-info px-60px py-1"
+                                        (click)="submit()">
+                                        الخطوة التالية
+                                    </button>
+
+                                    <p class="fs-12px text-gray-500 mt-4 mb-0">
+                                        قم بالضغط على زر "بدء" للبدء في العملية، لادخال معلومات المنزل
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="position-absolute" style="  bottom: -9px; left: 0; right: 0;">
+                        <nz-progress [nzPercent]="50" [nzShowInfo]="false"></nz-progress>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
+    </ng-container>
+</div>

@@ -7,18 +7,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./selection.component.scss']
 })
 export class SelectionComponent {
-  selectedValue: number = 0;
+  current = 0;
+
+  selectedPlace: number = 0;
+  selectedHouse: number = 0;
 
   constructor(private router: Router) { }
 
+
   selectCard(value: number) {
-    this.selectedValue = value;
-    // console.log(this.selectedValue);
-    // this.router.navigate(['/pre-step']);
+    this.selectedPlace = value;
   }
 
-  createProject() {
-    console.log(this.selectedValue);
+  submit() {
+    console.log('place', this.selectedPlace, ' house ', this.selectedHouse);
+
     this.router.navigate(['/prob']);
+  }
+
+  pre(): void {
+    this.current -= 1;
+  }
+
+  next(): void {
+    this.current += 1;
   }
 }
