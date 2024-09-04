@@ -25,6 +25,12 @@ export class SelectionComponent {
     this.router.navigate(['/prob']);
   }
 
+  getSelectionValue() {
+    return {
+      selectedPlace: this.selectedPlace,
+      selectedHouse: this.selectedHouse
+    };
+  }
   pre(): void {
     this.current -= 1;
   }

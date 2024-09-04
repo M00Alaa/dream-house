@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { PreStepComponent } from '../pre-step/pre-step.component';
+import { SelectionComponent } from '../selection/selection.component';
+import { ProbComponent } from '../prob/prob.component';
 
 @Component({
   selector: 'app-home',
@@ -7,15 +10,18 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  @ViewChild(PreStepComponent) preStepComponent!: PreStepComponent;
+  @ViewChild(SelectionComponent) selectionComponent!: SelectionComponent;
+  @ViewChild(ProbComponent) probComponent!: ProbComponent;
+
   current = 0;
 
   HouseData = {}
 
   constructor(private route: ActivatedRoute) {
 
-    console.log(this.route.url.subscribe(params => {
+    this.route.url.subscribe(params => {
       console.log(params[0].path);
-      // if (this.HouseData == null) {
 
       if (params[0].path === 'pre-step') {
         this.current = 0;
@@ -32,13 +38,25 @@ export class HomeComponent {
       if (params[0].path === 'submission') {
         this.current = 3;
       }
-      // }
-      // else {
-      //   this.current = 0
-      // }
-    }));
+    });
 
   }
+
+  collectValues() {
+    if (this.current === 0 && this.preStepComponent) {
+      const preStepValue = this.preStepComponent.projectName;
+      console.log(preStepValue);
+    }
+    if (this.current === 1 && this.selectionComponent) {
+      const selectionValue = this.selectionComponent.getSelectionValue();
+      console.log(selectionValue);
+    }
+    if (this.current === 2 && this.probComponent) {
+      const probValue = this.probComponent.getProbValue();
+      console.log(probValue);
+    }
+  }
+
 
   pre(): void {
     this.current -= 1;

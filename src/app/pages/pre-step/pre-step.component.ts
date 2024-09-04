@@ -8,12 +8,16 @@ import { Router } from '@angular/router';
 })
 export class PreStepComponent {
   selectedValue: number = 0;
-  projectName: string = '';
+  public projectName: string = '';
 
   constructor(private router: Router) { }
 
   selectCard(value: number) {
     this.selectedValue = value;
+  }
+
+  getPreStepValue() {
+    return this.projectName;
   }
 
   createProject() {

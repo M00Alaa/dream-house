@@ -23,7 +23,7 @@ import { NzStepsModule } from 'ng-zorro-antd/steps';
 
 const routes: Routes = [
 
-  { path: '', component: HomeComponent },
+  { path: '', redirectTo: 'pre-step', pathMatch: 'full' },
   { path: 'pre-step', component: HomeComponent },
   { path: 'prob', component: HomeComponent },
   { path: 'selection', component: HomeComponent },

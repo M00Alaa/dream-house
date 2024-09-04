@@ -33,6 +33,14 @@ export class ProbComponent {
     console.log(this.editorData);
   }
 
+  getProbValue() {
+    return {
+      houseDescription: this.houseDescription,
+      editorData: this.editorData
+    };
+  }
+
+
   next() {
     this.current = this.current + 1;
   }
