@@ -8,7 +8,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
   styleUrls: ['./prob.component.scss']
 })
 export class ProbComponent {
-  current = 1;
+  current = 0;
   radioValue = 'A';
 
   houseDescription = '';
